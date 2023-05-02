@@ -14,7 +14,7 @@ const Header = () => {
         <ActiveLink to='/register'>register</ActiveLink>
         <ActiveLink to='/logout'>logout</ActiveLink>
         <ActiveLink to='/profile'>profile</ActiveLink>
-        <ActiveLink to='/111'>111</ActiveLink>
+        <ActiveLink to='/blog'>blog</ActiveLink>
         <ActiveLink to='/222'>222</ActiveLink>
       </div>
     </div>
