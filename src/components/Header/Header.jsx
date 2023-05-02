@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className='navbar bg-base-300 flex flex-col justify-center items-center md:flex-row md:justify-between'>
       <div>
-        <h1 className='font-blod text-4xl'>ARABIA'S FOOD HOUSE</h1>
+        <h1 className='font-blod text-4xl'>BD'S FOOD HOUSE</h1>
       </div>
       <div className='flex flex-col justify-center text-xl gap-2 md:gap-4 my-0 md:my-4 md:flex-row'>
         <ActiveLink to='/'>Home </ActiveLink>

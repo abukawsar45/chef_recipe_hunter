@@ -19,22 +19,34 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader:  async () => {
+          const res = await fetch('http://localhost:5000/alldata')
+          const data = await res.json()
+          return data;
+        },
+        /*
+        *   path: '/jobdetails/:jobId',
+        element: <SingleJobDetails></SingleJobDetails>,
+        loader: async ({params}) => {
+          const res = await fetch('/jobsdata.json')
+          const data = await res.json()
+          return data.find(job => job.id == params.jobId)
+        *   */
       },
       {
         path: '/login',
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: '/register',
-        element: <Register></Register>
+        element: <Register></Register>,
       },
       {
         path: '/blog',
-        element: <Blog></Blog>
+        element: <Blog></Blog>,
       },
-
-    ]
+    ],
   },
 ]);
 
