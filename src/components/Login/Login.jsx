@@ -6,7 +6,8 @@ const Login = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  const { SignInWithGoogle } = useContext(AuthContext);
+  const { SignInWithGoogle, signInWithGithub, loginWithEmailAndPassword } =
+    useContext(AuthContext);
 
 
   const handleLogin = (event) => {
@@ -14,7 +15,20 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email,password);
+    console.log(email, password);
+    loginWithEmailAndPassword(email,password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setError('');
+        setSuccess('login successfull');
+        form.reset();
+      })
+      .catch(error => {
+        console.log(error.message);
+        setSuccess('');
+        setError(error.message);
+    })
 
   }
   const handleGoogleLogin = () => {
@@ -33,7 +47,18 @@ const Login = () => {
     })
   }
   const handleGithubLogin = () => {
-    console.log('kdd');
+    signInWithGithub()
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setError('');
+        setSuccess('Login successful');
+      })
+      .catch(err => {
+        console.log(err.message);
+        setSuccess('');
+        setError(err.message);
+      });
   }
 
   return (
