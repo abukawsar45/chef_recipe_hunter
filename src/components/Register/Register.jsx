@@ -90,8 +90,8 @@ const Register = () => {
                 />
               </div>
               <div>
-                <p className='text-success'>{success? success : ''}</p>
-                <p className='text-red-600'>{error? error: ''}</p>
+                <p className='text-success'>{success ? success : ''}</p>
+                <p className='text-red-600'>{error ? error : ''}</p>
               </div>
               <div className='label'>
                 <p>
@@ -117,6 +117,24 @@ const Register = () => {
           </div>
         </div>
       </form>
+      <div>
+        <div className='flex flex-col md:flex-row justify-center gap-2 w-6/12 my-6 mx-auto'>
+          <div>
+            <img
+              className='link'
+              src='https://i.ibb.co/gSTHXZJ/google-btn.png'
+              alt=''
+            />
+          </div>
+          <div>
+            <img
+              className='link'
+              src='https://i.ibb.co/g9f4P0S/github-btn.png'
+              alt=''
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProviders/AuthProviders';
 
 const Login = () => {
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const { SignInWithGoogle } = useContext(AuthContext);
+
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -11,6 +17,25 @@ const Login = () => {
     console.log(email,password);
 
   }
+  const handleGoogleLogin = () => {
+    SignInWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setError('');
+        setSuccess('Login successful')
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setSuccess('');
+        setError(err.message);
+
+    })
+  }
+  const handleGithubLogin = () => {
+    console.log('kdd');
+  }
+
   return (
     <div>
       <div className='hero min-h-screen bg-base-200'>
@@ -45,11 +70,20 @@ const Login = () => {
                     required
                   />
                 </div>
-
+                <div>
+                  <p className='text-success'>{success ? success : ''}</p>
+                  <p className='text-red-600'>{error ? error : ''}</p>
+                </div>
                 <div className='label'>
                   <p>
                     <span>
-                      First time in this website?Please <Link to='/register' className=' link link-hover text-blue-500'>Register</Link>
+                      First time in this website?Please{' '}
+                      <Link
+                        to='/register'
+                        className=' link link-hover text-blue-500'
+                      >
+                        Register
+                      </Link>
                     </span>
                   </p>
                 </div>
@@ -62,6 +96,24 @@ const Login = () => {
                 </div>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className='flex flex-col md:flex-row justify-center gap-2 w-6/12 my-6 mx-auto'>
+          <div>
+            <img onClick={handleGoogleLogin}
+              className='link'
+              src='https://i.ibb.co/gSTHXZJ/google-btn.png'
+              alt=''
+            />
+          </div>
+          <div>
+            <img onClick={handleGithubLogin}
+              className='link'
+              src='https://i.ibb.co/g9f4P0S/github-btn.png'
+              alt=''
+            />
           </div>
         </div>
       </div>
