@@ -6,7 +6,7 @@ const ChefData = ({ chefInfo }) => {
 
   // console.log(chefInfo);
   const { picture, name, experience, numRecipes,rating_star, chef_image, _id} = chefInfo;
-  console.log(chef_image);
+  // console.log(chef_image);
 
 
 

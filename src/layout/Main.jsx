@@ -5,7 +5,7 @@ import Footer from '../components/Footer/Footer';
 
 const Main = () => {
   return (
-    <div className=''>
+    <div className='my-2'>
       <Header></Header>
       <Outlet></Outlet>
       <Footer/>
