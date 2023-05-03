@@ -28,16 +28,19 @@ const Header = () => {
         <h1 className='font-blod text-4xl'>BD'S FOOD HOUSE</h1>
       </div>
       <div className='flex flex-col justify-center text-xl gap-2 md:gap-4 my-0 md:my-6 md:flex-row'>
-        <ActiveLink className='' to='/blog'>
-          blog
-        </ActiveLink>
         <ActiveLink to='/'>Home </ActiveLink>
+        <ActiveLink className='' to='/blog'>
+          Blog
+        </ActiveLink>
       </div>
       <div className='flex flex-col justify-center items-center text-xl gap-2 md:gap-4 my-0 md:my-6 md:flex-row'>
         {user ? (
           <>
             {image && (
-              <div className='tooltip flex items-center' data-tip={name && name }>
+              <div
+                className='tooltip flex items-center'
+                data-tip={name && name}
+              >
                 <div className='avatar online'>
                   <div className='w-14 rounded-full'>
                     <img src={image} />
@@ -46,22 +49,21 @@ const Header = () => {
               </div>
             )}
 
-            <button className='btn btn-error' onClick={handleLogOut}>
+            <button className='btn btn-outline' onClick={handleLogOut}>
               logout
             </button>
           </>
         ) : (
           <>
-            <div className='btn btn-info'>
+            <div className='btn btn btn-outline'>
               <ActiveLink to='/register'>Sign Up</ActiveLink>
             </div>
-            <div className='btn bg-green-600'>
-              <ActiveLink to='/login'>login</ActiveLink>
+            <div className='btn btn-outline '>
+              <ActiveLink  to='/login'>login</ActiveLink>
             </div>
           </>
         )}
 
-        <ActiveLink to='/222'>222</ActiveLink>
       </div>
     </div>
   );
