@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ChefData = ({ chefInfo }) => {
   console.log(chefInfo);
-  const { picture, name, experience, numRecipes, } = chefInfo;
+  const { picture, name, experience, numRecipes, _id} = chefInfo;
 
   return (
-    <div>
+    <div className='mx-2 md:mx-4 my-2 md:my-4 w-auto'>
       <h1>Chef data</h1>
       <div className='card card-compact w-96 bg-base-100 shadow-xl'>
         <figure>
@@ -17,10 +18,13 @@ const ChefData = ({ chefInfo }) => {
           <h2 className='card-title'>Shoes!</h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className='card-actions justify-end'>
-            <button className='btn btn-primary'>Buy Now</button>
+            <Link to={`/alldata/:${_id}`} className='btn btn-primary'>
+              View Recepe
+            </Link>
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

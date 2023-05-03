@@ -11,6 +11,8 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Blog from './components/Blog/Blog';
 import AuthProviders from './AuthProviders/AuthProviders';
+import SingleChefInfo from './components/SingleChefInfo/SingleChefInfo';
+import PrivateRoutes from './Private/PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -20,11 +22,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader:  async () => {
-          const res = await fetch('http://localhost:5000/alldata')
-          const data = await res.json()
+        loader: async () => {
+          const res = await fetch('http://localhost:5000/alldata');
+          const data = await res.json();
           return data;
         },
+
         /*
         *   path: '/jobdetails/:jobId',
         element: <SingleJobDetails></SingleJobDetails>,
@@ -33,6 +36,15 @@ const router = createBrowserRouter([
           const data = await res.json()
           return data.find(job => job.id == params.jobId)
         *   */
+      },
+      {
+      path: '/alldata/:chefId',
+      element: <PrivateRoutes><SingleChefInfo></SingleChefInfo></PrivateRoutes>,
+      // loader: async ({params}) => {
+      //   const res = await fetch('')
+      //   const data = await res.json();
+      //   return data.find(chef=> chef.id === params.chefId)
+      // }
       },
       {
         path: '/login',

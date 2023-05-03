@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ActiveLink from '../ActiveLink/ActiveLink';
+import { AuthContext } from '../../AuthProviders/AuthProviders';
 
 const Header = () => {
+
+
+  const { user,logOut } = useContext(AuthContext);
+  console.log(user);
+  console.log(logOut);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch(err => {
+      console.log(err.message);
+    })
+  }
+
+
   return (
     <div className='navbar bg-base-300 flex flex-col justify-center items-center md:flex-row md:justify-between'>
       <div>
@@ -10,10 +26,15 @@ const Header = () => {
       </div>
       <div className='flex flex-col justify-center text-xl gap-2 md:gap-4 my-0 md:my-4 md:flex-row'>
         <ActiveLink to='/'>Home </ActiveLink>
-        <ActiveLink to='/login'>login</ActiveLink>
         <ActiveLink to='/register'>register</ActiveLink>
-        <ActiveLink to='/logout'>logout</ActiveLink>
-        <ActiveLink to='/profile'>profile</ActiveLink>
+        {user ? (
+          <>
+            <p className=''>{user.email}</p>
+            <button onClick={handleLogOut}>logout</button>
+          </>
+        ) : (
+          <ActiveLink to='/login'>login</ActiveLink>
+        )}
         <ActiveLink to='/blog'>blog</ActiveLink>
         <ActiveLink to='/222'>222</ActiveLink>
       </div>

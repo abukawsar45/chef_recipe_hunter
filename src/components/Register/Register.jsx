@@ -16,6 +16,26 @@ const Register = () => {
     const imgUrl = form.url.value;
     const email = form.email.value;
     const password = form.password.value;
+    if (password.length < 6)
+    {
+      setError('Password should be at least 6 characters');
+      return
+    }
+    else if (!/(?=.*[a-z])/.test(password))
+    {
+      setError('Password not valid,should contain at least one lower case');
+      return
+    }
+    else if (!/(?=.*[A-Z])/.test(password)) {
+      setError('Password not valid,should contain at least one upper case');
+      return;
+    } else if (!/(?=.*[!#$%&? "])/.test(password)) {
+      setError('Password not valid, use one special character');
+      return;
+    } else if (!/(?=.*\d)/.test(password)) {
+      setError('Password not valid, use an one number');
+      return;
+    }
     console.log(name, imgUrl, email, password);
     signUpWithEmail(email, password)
       .then(result => {
