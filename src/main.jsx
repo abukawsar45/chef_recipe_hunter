@@ -23,7 +23,9 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
         loader: async () => {
-          const res = await fetch('http://localhost:5000/alldata');
+          const res = await fetch(
+            'https://my-assignment-10-server-abukawsar45.vercel.app/alldata'
+          );
           const data = await res.json();
           return data;
         },
@@ -39,13 +41,20 @@ const router = createBrowserRouter([
       },
       {
         path: '/alldata/:chefId',
-        element: <PrivateRoutes><SingleChefInfo></SingleChefInfo></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/alldata/${params.chefId}`)
-      // loader: async ({params}) => {
-      //   const res = await fetch('')
-      //   const data = await res.json();
-      //   return data.find(chef=> chef.id === params.chefId)
-      // }
+        element: (
+          <PrivateRoutes>
+            <SingleChefInfo></SingleChefInfo>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://my-assignment-10-server-abukawsar45.vercel.app/alldata/${params.chefId}`
+          ),
+        // loader: async ({params}) => {
+        //   const res = await fetch('')
+        //   const data = await res.json();
+        //   return data.find(chef=> chef.id === params.chefId)
+        // }
       },
       {
         path: '/login',
