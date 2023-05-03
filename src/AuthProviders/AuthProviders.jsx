@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -33,6 +34,9 @@ const AuthProviders = ({children}) => {
   const loginWithEmailAndPassword = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
+  };
+  const passwordReset = (email) => {
+    return sendPasswordResetEmail(auth, email);
   }
 
   const githubProvider = new GithubAuthProvider();
@@ -77,7 +81,7 @@ const AuthProviders = ({children}) => {
     signInWithGithub,
     loginWithEmailAndPassword,
     logOut,
-    
+    passwordReset,
   };
   return (
     <AuthContext.Provider value={authInfo}>

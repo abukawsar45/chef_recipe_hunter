@@ -13,6 +13,7 @@ import Blog from './components/Blog/Blog';
 import AuthProviders from './AuthProviders/AuthProviders';
 import SingleChefInfo from './components/SingleChefInfo/SingleChefInfo';
 import PrivateRoutes from './Private/PrivateRoutes';
+import ForgetPassword from './components/ForgetPassword/ForgetPassword';
 
 const router = createBrowserRouter([
   {
@@ -50,11 +51,7 @@ const router = createBrowserRouter([
           fetch(
             `https://my-assignment-10-server-abukawsar45.vercel.app/alldata/${params.chefId}`
           ),
-        // loader: async ({params}) => {
-        //   const res = await fetch('')
-        //   const data = await res.json();
-        //   return data.find(chef=> chef.id === params.chefId)
-        // }
+        
       },
       {
         path: '/login',
@@ -63,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>,
+      },
+      {
+        path: '/forgetten_password',
+        element: <ForgetPassword></ForgetPassword>
       },
       {
         path: '/blog',

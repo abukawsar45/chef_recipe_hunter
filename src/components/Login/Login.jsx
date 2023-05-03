@@ -102,6 +102,14 @@ const Login = () => {
                     required
                   />
                 </div>
+                <span>
+                  <Link
+                    to='/forgetten_password'
+                    className=' link link-hover text-blue-500'
+                  >
+                    forgetten password
+                  </Link>
+                </span>
                 <div>
                   <p className='text-success'>{success ? success : ''}</p>
                   <p className='text-red-600'>{error ? error : ''}</p>
@@ -134,14 +142,16 @@ const Login = () => {
       <div>
         <div className='flex flex-col md:flex-row justify-center gap-2 w-6/12 my-6 mx-auto'>
           <div>
-            <img onClick={handleGoogleLogin}
+            <img
+              onClick={handleGoogleLogin}
               className='link'
               src='https://i.ibb.co/gSTHXZJ/google-btn.png'
               alt=''
             />
           </div>
           <div>
-            <img onClick={handleGithubLogin}
+            <img
+              onClick={handleGithubLogin}
               className='link'
               src='https://i.ibb.co/g9f4P0S/github-btn.png'
               alt=''

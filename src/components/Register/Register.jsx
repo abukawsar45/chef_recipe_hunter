@@ -7,7 +7,7 @@ const Register = () => {
   const [success, setSuccess] = useState('')
   const [error, setError] = useState('')
   const { user, signUpWithEmail, updateUserProfile } = useContext(AuthContext);
-  console.log(user, signUpWithEmail);
+  // console.log(user, signUpWithEmail);
 
   const handleRegister = event => {
     event.preventDefault();
@@ -36,19 +36,19 @@ const Register = () => {
       setError('Password not valid, use an one number');
       return;
     }
-    console.log(name, imgUrl, email, password);
+    // console.log(name, imgUrl, email, password);
     signUpWithEmail(email, password)
       .then(result => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         setError('')
         setSuccess('Registration Successfull');
         form.reset();
         updateUserProfile(name,imgUrl)
-        console.log(loggedUser);
+        console.log('......',loggedUser);
       })
       .catch(err => {
-        console.log(err.message);
+        // console.log(err.message);
         setSuccess('')
         setError(err.message);
       });
