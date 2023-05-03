@@ -7,8 +7,10 @@ const Header = () => {
 
 
   const { user,logOut } = useContext(AuthContext);
-  console.log(user);
-  console.log(logOut);
+  console.log('...', user);
+  const image = user?.photoURL;
+  console.log(image);
+  // console.log(logOut);
 
   const handleLogOut = () => {
     logOut()
@@ -26,16 +28,35 @@ const Header = () => {
       </div>
       <div className='flex flex-col justify-center text-xl gap-2 md:gap-4 my-0 md:my-4 md:flex-row'>
         <ActiveLink to='/'>Home </ActiveLink>
-        <ActiveLink to='/register'>register</ActiveLink>
         {user ? (
           <>
-            <p className=''>{user.email}</p>
-            <button onClick={handleLogOut}>logout</button>
+            {image && (
+              <div className='avatar online'>
+                <div className='w-12 rounded-full'>
+                  <img src={image} />
+                </div>
+              </div>
+            )}
+
+            <button className='btn btn-error' onClick={handleLogOut}>
+              logout
+            </button>
           </>
         ) : (
-          <ActiveLink to='/login'>login</ActiveLink>
+          <>
+              <div className='btn btn-info'>
+                <ActiveLink to='/register'>Sign Up</ActiveLink>
+              </div>
+              <div className='btn bg-green-600'>
+                <ActiveLink to='/login'>login</ActiveLink>
+              </div>
+          </>
         )}
-        <ActiveLink to='/blog'>blog</ActiveLink>
+        
+          <ActiveLink className='' to='/blog'>
+            blog
+          </ActiveLink>
+        
         <ActiveLink to='/222'>222</ActiveLink>
       </div>
     </div>

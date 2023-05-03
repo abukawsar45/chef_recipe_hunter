@@ -6,7 +6,7 @@ const Register = () => {
 
   const [success, setSuccess] = useState('')
   const [error, setError] = useState('')
-  const { user, signUpWithEmail } = useContext(AuthContext);
+  const { user, signUpWithEmail, updateUserProfile } = useContext(AuthContext);
   console.log(user, signUpWithEmail);
 
   const handleRegister = event => {
@@ -44,6 +44,8 @@ const Register = () => {
         setError('')
         setSuccess('Registration Successfull');
         form.reset();
+        updateUserProfile(name,imgUrl)
+        console.log(loggedUser);
       })
       .catch(err => {
         console.log(err.message);
@@ -137,7 +139,7 @@ const Register = () => {
           </div>
         </div>
       </form>
-      <div>
+      {/* <div>
         <div className='flex flex-col md:flex-row justify-center gap-2 w-6/12 my-6 mx-auto'>
           <div>
             <img
@@ -154,7 +156,7 @@ const Register = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
