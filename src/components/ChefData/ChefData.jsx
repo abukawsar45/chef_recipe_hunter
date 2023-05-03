@@ -1,9 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const ChefData = ({ chefInfo }) => {
-  console.log(chefInfo);
+
+
+  // console.log(chefInfo);
   const { picture, name, experience, numRecipes, _id} = chefInfo;
+ 
+
+
 
   return (
     <div className='mx-2 md:mx-4 my-2 md:my-4 w-auto'>
@@ -18,7 +23,7 @@ const ChefData = ({ chefInfo }) => {
           <h2 className='card-title'>Shoes!</h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className='card-actions justify-end'>
-            <Link to={`/alldata/:${_id}`} className='btn btn-primary'>
+            <Link to={`/alldata/${_id}`} className='btn btn-primary'>
               View Recepe
             </Link>
           </div>
