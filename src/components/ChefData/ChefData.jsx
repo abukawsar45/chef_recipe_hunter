@@ -5,8 +5,8 @@ const ChefData = ({ chefInfo }) => {
 
 
   // console.log(chefInfo);
-  const { picture, name, experience, numRecipes, _id} = chefInfo;
- 
+  const { picture, name, experience, numRecipes,rating_star, chef_image, _id} = chefInfo;
+  console.log(chef_image);
 
 
 
@@ -22,14 +22,21 @@ const ChefData = ({ chefInfo }) => {
         <div className='card-body'>
           <h2 className='card-title'>Shoes!</h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className='card-actions justify-end'>
+          <div className='card-actions flex justify-between m-2'>
+            <div className='flex items-center gap-2'>
+              <div className='avatar'>
+                <div className='w-12 rounded-full'>
+                  <img src={chef_image} />
+                </div>
+              </div>
+              <p>{rating_star}</p>
+            </div>
             <Link to={`/alldata/${_id}`} className='btn btn-primary'>
               View Recepe
             </Link>
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

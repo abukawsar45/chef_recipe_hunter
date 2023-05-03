@@ -38,8 +38,9 @@ const router = createBrowserRouter([
         *   */
       },
       {
-      path: '/alldata/:chefId',
-      element: <PrivateRoutes><SingleChefInfo></SingleChefInfo></PrivateRoutes>,
+        path: '/alldata/:chefId',
+        element: <PrivateRoutes><SingleChefInfo></SingleChefInfo></PrivateRoutes>,
+        loader: ({ params }) => fetch(`http://localhost:5000/alldata/${params.chefId}`)
       // loader: async ({params}) => {
       //   const res = await fetch('')
       //   const data = await res.json();
