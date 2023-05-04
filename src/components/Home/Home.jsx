@@ -13,8 +13,7 @@ import { AutoPlay } from '@egjs/flicking-plugins';
 const Home = () => {
 
   const chefsData = useLoaderData();
-  console.log(chefsData);
-  const chefs = chefsData.chefs
+  const chefs = chefsData.chefs;
 
 
   return (
