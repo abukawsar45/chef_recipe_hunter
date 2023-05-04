@@ -6,8 +6,8 @@
 
 # if is a big project of my life
 
-# it is a Chef collection website and show Chefs recipe Item.
+# Best Chef collection.
 
-# How to make a food items to talk the element and cooking method in this website
+# How to make a food items to talk.
 
 # show all Chef life history in this website.
