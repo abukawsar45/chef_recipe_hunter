@@ -44,7 +44,8 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         setError('');
-        setSuccess('Login successful')
+        setSuccess('Login successful');
+        navigate(from);
       })
       .catch((err) => {
         console.log(err.message);
@@ -60,6 +61,7 @@ const Login = () => {
         console.log(loggedUser);
         setError('');
         setSuccess('Login successful');
+        navigate(from);
       })
       .catch(err => {
         console.log(err.message);
