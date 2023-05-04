@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating';
-import {FaBeer, FaRegThumbsUp } from 'react-icons/fa';
+import { FaThumbsUp } from 'react-icons/fa';
 
 import '@smastrom/react-rating/style.css';
 
@@ -38,9 +38,9 @@ const ChefData = ({ chefInfo }) => {
                 <div className='flex items-center my-2 '>
                   <>
                     <span className='text-cyan-400'>
-                      <FaRegThumbsUp className='h-4 w-4' />
+                      <FaThumbsUp className='h-5 w-5' />
                     </span>
-                    <p>{likes}</p>
+                    <p className='ml-2 text-xl'>{likes}</p>
                   </>
                 </div>
                 <div className=' flex items-center'>
@@ -55,8 +55,7 @@ const ChefData = ({ chefInfo }) => {
             </div>
           </div>
         </div>
-        <div>
-          {' '}
+        <div className='text-right'>
           <Link to={`/alldata/${_id}`} className='btn btn-primary'>
             View Recepe
           </Link>

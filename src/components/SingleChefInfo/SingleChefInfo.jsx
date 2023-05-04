@@ -12,18 +12,12 @@ const SingleChefInfo = () => {
 
   return (
     <div className='grid grid-cols-12 relative'>
-      <div className='col-span-12 md:col-span-3 card lg:card-side bg-base-100 shadow-xl md:order-2'>
+      <div className='col-span-12 card lg:card-side bg-base-100 shadow-xl'>
         <div className=''>
-          <div className='sticky top-0'>
-          <h3 className='my-2 mx-2 font-bold text-4xl'>{ chef_name }</h3>
-            <img src={chef_image} alt='Album' />
-            <div>
-              <p></p>
-            </div>
-          </div>
+          
         </div>
       </div>
-      <div className='col-span-12 md:col-span-9'>
+      <div className='col-span-12'>
         <div>
           {foods.map(food => (
             <FoodDetails key={food._id} food={food}></FoodDetails>
