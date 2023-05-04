@@ -9,7 +9,13 @@ const PrivateRoutes = ({ children }) => {
 
   if (loading)
   {
-    return
+    return (
+      <progress
+        className='progress progress-success w-56'
+        value='10'
+        max='100'
+      ></progress>
+    );
   }
 
   const location = useLocation()
