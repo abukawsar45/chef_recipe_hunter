@@ -27,7 +27,7 @@ const Home = () => {
       <div>
         <div className='carousel w-full'>
           <div id='slide1' className='carousel-item relative w-full'>
-            <img 
+            <img
               src='https://nomadparadise.com/wp-content/uploads/2021/03/bangladeshi-food-04-735x490.jpg.webp'
               className='h-auto md:h-96 p-2 md:px-6 md:py-4 w-full'
             />
@@ -40,9 +40,9 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <div id='slide2' className='carousel-item relative md:h-52 w-full'>
-            <img 
-              src='https://nomadparadise.com/wp-content/uploads/2021/03/bangladeshi-food-09-735x490.jpg.webp'
+          <div id='slide2' className='carousel-item relative w-full'>
+            <img
+              src='https://www.chefspencil.com/wp-content/uploads/Jhalmuri-960x720.jpg.webp'
               className='h-auto md:h-96 p-2 md:px-6 md:py-4 w-full'
             />
             <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
@@ -55,7 +55,7 @@ const Home = () => {
             </div>
           </div>
           <div id='slide3' className='carousel-item relative w-full'>
-            <img 
+            <img
               src='https://nomadparadise.com/wp-content/uploads/2021/03/bangladeshi-food-05b-735x490.jpg.webp'
               className='h-auto md:h-96 p-2 md:px-6 md:py-4 w-full'
             />
@@ -69,7 +69,7 @@ const Home = () => {
             </div>
           </div>
           <div id='slide4' className='carousel-item relative w-full'>
-            <img 
+            <img
               src='https://nomadparadise.com/wp-content/uploads/2021/03/bangladeshi-food-12-scaled-735x490.jpg.webp'
               className='h-auto md:h-96 p-2 md:px-6 md:py-4 w-full'
             />
