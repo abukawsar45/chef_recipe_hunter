@@ -3,35 +3,33 @@ import { Rating } from '@smastrom/react-rating';
 // import { FaBeer, FaRegThumbsUp } from 'react-icons/fa';
 import { FaBeer } from 'react-icons/fa';
 import { FaStar } from 'react-icons/fa';
- import { ToastContainer, toast } from 'react-toastify';
- import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '@smastrom/react-rating/style.css';
 import 'react-notifications-component/dist/theme.css';
 
-
 const FoodDetails = ({ food }) => {
-
   const [active, setActive] = useState(false);
   const handleFavouriteIcon = () => {
     toast('Add to favourite list!');
-  }
-  
+     setActive(true);
+  };
 
   console.log(food);
   console.log(food.Ingredients);
-  const { food_name, food_image, details,ratings } = food;
+  const { food_name, food_image, details, ratings } = food;
   return (
     <div className='my-2 md:my-4'>
       <ToastContainer />
       <div className='card lg:card-side bg-base-100 shadow-xl'>
         <div className='card-body'>
-          <h2 className='card-title font-mono text-indigo-500'>
-            Recipe Name : {food_name}
+          <h2 className='card-title text-2xl text-indigo-500'>
+            Recipe Name:{food_name}
           </h2>
-          <div className='flex flex-col md:flex-row gap-2 md:gap-4 lg:gap-6'>
-            <div className='col-span-12 w-6/12 md:col-span-6'>
+          <div className='grid gap-2 md:gap-6 grid-cols-1 md:grid-cols-2'>
+            <div className=''>
               <img
-                className='h-32 md:h-96 w-full rounded-lg'
+                className='md:h-96 w-full  rounded-lg'
                 src={food_image}
                 alt=''
               />
@@ -55,31 +53,23 @@ const FoodDetails = ({ food }) => {
               </div>
             </div>
           </div>
+          <div>
+            <div></div>
+          </div>
           <p className='rounded-lg'>{details}</p>
-          <div className='card-actions justify-between'>
+          <div className='card-actions justify-between items-center'>
             <div className='flex items-center gap-6'>
               <div className=' flex items-center'>
                 <Rating style={{ maxWidth: 150 }} value={ratings} readOnly />
                 <p className='mx-2'> {ratings}</p>
               </div>
-              <div className='flex flex-col items-center'>
-                <span>
-                  <FaStar
-                    onClick={handleFavouriteIcon}
-                    className='h-5 w-5 text-black hover:text-lime-400'
-                  />
-                </span>
-                <div>
-                  <h4>Favourites</h4>
-                </div>
-              </div>
             </div>
             <button
               className='btn btn-primary'
-              onClick={() => setActive(true)}
+              onClick={handleFavouriteIcon}
               disabled={active}
             >
-              Bookmark
+              Favourites
             </button>
           </div>
         </div>

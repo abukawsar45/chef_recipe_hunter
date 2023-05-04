@@ -14,11 +14,13 @@ import AuthProviders from './AuthProviders/AuthProviders';
 import SingleChefInfo from './components/SingleChefInfo/SingleChefInfo';
 import PrivateRoutes from './Private/PrivateRoutes';
 import ForgetPassword from './components/ForgetPassword/ForgetPassword';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Main></Main>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: '/',
@@ -30,15 +32,6 @@ const router = createBrowserRouter([
           const data = await res.json();
           return data;
         },
-
-        /*
-        *   path: '/jobdetails/:jobId',
-        element: <SingleJobDetails></SingleJobDetails>,
-        loader: async ({params}) => {
-          const res = await fetch('/jobsdata.json')
-          const data = await res.json()
-          return data.find(job => job.id == params.jobId)
-        *   */
       },
       {
         path: '/alldata/:chefId',
