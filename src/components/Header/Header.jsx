@@ -7,7 +7,7 @@ const Header = () => {
 
 
   const { user,logOut } = useContext(AuthContext);
-  console.log('...', user);
+  // console.log('...', user);
   const name = user?.displayName;
   const image = user?.photoURL;
   // console.log(image);
@@ -17,7 +17,7 @@ const Header = () => {
     logOut()
       .then()
       .catch(err => {
-      console.log(err.message);
+      // console.log(err.message);
     })
   }
 

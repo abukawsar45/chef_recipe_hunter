@@ -5,9 +5,9 @@ import { FaThumbsUp } from 'react-icons/fa';
 
 const SingleChefInfo = () => {
   const { chefId } = useParams();
-  // console.log('oooo', chefId);
+  //
   const chefDetails = useLoaderData();
-  console.log(chefDetails);
+ 
   const {chef_name,bio, chef_image,likes,experience,numRecipes, foods} = chefDetails;
 
 

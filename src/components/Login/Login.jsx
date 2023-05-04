@@ -7,7 +7,7 @@ const Login = () => {
   const [success, setSuccess] = useState('');
 
   const location = useLocation();
-  console.log(location);
+ 
   const from = location.state?.from?.pathname || '/';
 
   const navigate = useNavigate();
@@ -21,18 +21,18 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+   
     loginWithEmailAndPassword(email,password)
       .then(result => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+       
         setError('');
         setSuccess('login successfull');
         form.reset();
         navigate(from)
       })
       .catch(error => {
-        console.log(error.message);
+       
         setSuccess('');
         setError(error.message);
     })
@@ -42,13 +42,13 @@ const Login = () => {
     SignInWithGoogle()
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+       
         setError('');
         setSuccess('Login successful');
         navigate(from);
       })
       .catch((err) => {
-        console.log(err.message);
+       
         setSuccess('');
         setError(err.message);
 
@@ -58,13 +58,13 @@ const Login = () => {
     signInWithGithub()
       .then(result => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+       
         setError('');
         setSuccess('Login successful');
         navigate(from);
       })
       .catch(err => {
-        console.log(err.message);
+       
         setSuccess('');
         setError(err.message);
       });

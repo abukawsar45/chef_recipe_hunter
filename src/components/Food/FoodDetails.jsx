@@ -15,8 +15,8 @@ const FoodDetails = ({ food }) => {
      setActive(true);
   };
 
-  console.log(food);
-  console.log(food.Ingredients);
+  // console.log(food);
+  // console.log(food.Ingredients);
   const { food_name, food_image, details, ratings } = food;
   return (
     <div className='my-2 md:my-4'>

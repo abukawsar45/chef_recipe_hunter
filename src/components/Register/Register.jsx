@@ -45,7 +45,7 @@ const Register = () => {
         setSuccess('Registration Successfull');
         form.reset();
         updateUserProfile(name,imgUrl)
-        console.log('......',loggedUser);
+      
       })
       .catch(err => {
         // console.log(err.message);
