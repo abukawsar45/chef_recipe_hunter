@@ -1,0 +1,48 @@
+.web-title h1 {
+  color: hsl(221, 90%, 49%);
+  font-size: 50px;
+  
+  animation: text 5s ease-in-out infinite;
+}
+@keyframes text {
+  0% {
+    background-position: 0% 50%;
+    color: rgb(92, 243, 23);
+  }
+  10% {
+    background-position: 0% 50%;
+    color: rgb(91, 214, 20);
+  }
+  20% {
+    background-position: 0% 50%;
+    color: rgb(13, 218, 30);
+  }
+  40% {
+    background-position: 0% 50%;
+    color: rgb(17, 236, 218);
+  }
+
+  50% {
+    background-position: 25% 75%;
+    color: rgb(14, 112, 223);
+  }
+  60% {
+    background-position: 25% 75%;
+    color: rgb(154, 18, 233);
+  }
+ 
+  80% {
+    background-position: 25% 75%;
+    color: rgb(201, 13, 218);
+  }
+  90% {
+    background-position: 25% 75%;
+    color: rgb(233, 14, 105);
+  }
+ 
+  100% {
+    background-position: 100% 50%;
+    color: rgb(12, 205, 231);
+  }
+
+}

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ChefData from '../ChefData/ChefData';
-
+import { Typewriter } from 'react-simple-typewriter';
+import ImageCarousel from '../Carousel/ImageCarousel';
 
 
 const Home = () => {
@@ -13,8 +14,20 @@ const Home = () => {
   return (
     <div className='my-8 '>
       <div className='bg-lime-200 px-4 flex flex-col md:flex-row items-center justify-center'>
-        <h3 className='py-2 w-6/12 font-bold text-2xl md:text-8xl text-sky-500 text-center'>
-          Available For BANGLADESH
+        <h3 className='py-2 w-6/12 font-bold text-2xl md:text-6xl text-sky-500 text-center'>
+          <span style={{ color: 'red', fontWeight: 'bold' }}>
+            {/* Style will be inherited from the parent element */}
+            <Typewriter
+              words={['Khichuri', 'Bhorta', 'Misty', 'Kacha-Golla!', 'Chom-Chom']}
+              loop={true}
+              cursor
+              cursorStyle='_'
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+              
+            />
+          </span>
         </h3>
         <div className='w-full md:w-6/12 '>
           <img
@@ -25,67 +38,9 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <div className='carousel w-full'>
-          <div id='slide1' className='carousel-item relative w-full'>
-            <img
-              src='https://nomadparadise.com/wp-content/uploads/2021/03/bangladeshi-food-04-735x490.jpg.webp'
-              className='h-auto md:h-96 p-2 md:px-6 md:py-4 w-full'
-            />
-            <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
-              <a href='#slide4' className='btn btn-circle'>
-                ❮
-              </a>
-              <a href='#slide2' className='btn btn-circle'>
-                ❯
-              </a>
-            </div>
-          </div>
-          <div id='slide2' className='carousel-item relative w-full'>
-            <img
-              src='https://www.chefspencil.com/wp-content/uploads/Jhalmuri-960x720.jpg.webp'
-              className='h-auto md:h-96 p-2 md:px-6 md:py-4 w-full'
-            />
-            <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
-              <a href='#slide1' className='btn btn-circle'>
-                ❮
-              </a>
-              <a href='#slide3' className='btn btn-circle'>
-                ❯
-              </a>
-            </div>
-          </div>
-          <div id='slide3' className='carousel-item relative w-full'>
-            <img
-              src='https://nomadparadise.com/wp-content/uploads/2021/03/bangladeshi-food-05b-735x490.jpg.webp'
-              className='h-auto md:h-96 p-2 md:px-6 md:py-4 w-full'
-            />
-            <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
-              <a href='#slide2' className='btn btn-circle'>
-                ❮
-              </a>
-              <a href='#slide4' className='btn btn-circle'>
-                ❯
-              </a>
-            </div>
-          </div>
-          <div id='slide4' className='carousel-item relative w-full'>
-            <img
-              src='https://nomadparadise.com/wp-content/uploads/2021/03/bangladeshi-food-12-scaled-735x490.jpg.webp'
-              className='h-auto md:h-96 p-2 md:px-6 md:py-4 w-full'
-            />
-            <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
-              <a href='#slide3' className='btn btn-circle'>
-                ❮
-              </a>
-              <a href='#slide1' className='btn btn-circle'>
-                ❯
-              </a>
-            </div>
-          </div>
-        </div>
+       <ImageCarousel></ImageCarousel>
       </div>
-      <div>
-      </div>
+      <div></div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {chefs.map(chefInfo => (

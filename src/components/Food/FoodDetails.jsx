@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating';
-// import { FaBeer, FaRegThumbsUp } from 'react-icons/fa';
-import { FaBeer } from 'react-icons/fa';
-import { FaStar } from 'react-icons/fa';
+import { FaStar, FaThumbsUp } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '@smastrom/react-rating/style.css';
@@ -15,9 +13,9 @@ const FoodDetails = ({ food }) => {
      setActive(true);
   };
 
-  // console.log(food);
+  console.log(food);
   // console.log(food.Ingredients);
-  const { food_name, food_image, details, ratings } = food;
+  const { food_name, food_image, details,likes, ratings } = food;
   return (
     <div className='my-2 md:my-4'>
       <ToastContainer />
@@ -62,6 +60,14 @@ const FoodDetails = ({ food }) => {
               <div className=' flex items-center'>
                 <Rating style={{ maxWidth: 150 }} value={ratings} readOnly />
                 <p className='mx-2'> {ratings}</p>
+              </div>
+              <div className='flex items-center my-2 '>
+                <>
+                  <span className='text-cyan-400'>
+                    <FaThumbsUp className='h-5 w-5' />
+                  </span>
+                  <p className='ml-2 text-xl'>{likes}</p>
+                </>
               </div>
             </div>
             <button

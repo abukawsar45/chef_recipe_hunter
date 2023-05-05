@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProviders/AuthProviders';
 
 const Register = () => {
 
+  const navigate = useNavigate();
   const [success, setSuccess] = useState('')
   const [error, setError] = useState('')
   const { user, signUpWithEmail, updateUserProfile } = useContext(AuthContext);
@@ -44,7 +45,8 @@ const Register = () => {
         setError('')
         setSuccess('Registration Successfull');
         form.reset();
-        updateUserProfile(name,imgUrl)
+        updateUserProfile(name, imgUrl)
+        navigate('/')
       
       })
       .catch(err => {
