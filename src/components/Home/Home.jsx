@@ -85,21 +85,6 @@ const Home = () => {
         </div>
       </div>
       <div>
-        {/* <Flicking
-          viewportTag='div'
-          cameraTag='div'
-          cameraClass=''
-          renderOnSameKey={false}
-          align='center'
-          onMove={(e: MoveEvent) => {}}
-          onWillChange={(e: WillChangeEvent) => {}}
-          horizontal={true}
-          circular={true}
-        >
-          <div>panel 0</div>
-          <div>panel 1</div>
-          <div>panel 2</div>
-        </Flicking> */}
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>

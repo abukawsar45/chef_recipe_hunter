@@ -19,7 +19,12 @@ const ChefData = ({ chefInfo }) => {
       <div className=''>
         <figure>
           <div className='overflow-hidden h-52'>
-            <img src={chef_image} alt='' />
+            <img src={ chef_image } alt=''
+              loading='lazy'
+              width='340'
+              height='300'
+            
+            />
           </div>
         </figure>
       </div>
