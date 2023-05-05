@@ -94,7 +94,7 @@ const Register = () => {
                   <span className='label-text'>Email</span>
                 </label>
                 <input
-                  type='text'
+                  type='email'
                   placeholder='email'
                   name='email'
                   className='input input-bordered'
@@ -106,7 +106,7 @@ const Register = () => {
                   <span className='label-text'>Password</span>
                 </label>
                 <input
-                  type='text'
+                  type='password'
                   placeholder='password'
                   name='password'
                   className='input input-bordered'
@@ -141,24 +141,6 @@ const Register = () => {
           </div>
         </div>
       </form>
-      {/* <div>
-        <div className='flex flex-col md:flex-row justify-center gap-2 w-6/12 my-6 mx-auto'>
-          <div>
-            <img
-              className='link'
-              src='https://i.ibb.co/gSTHXZJ/google-btn.png'
-              alt=''
-            />
-          </div>
-          <div>
-            <img
-              className='link'
-              src='https://i.ibb.co/g9f4P0S/github-btn.png'
-              alt=''
-            />
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

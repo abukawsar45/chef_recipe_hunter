@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../AuthProviders/AuthProviders';
+import { Link } from 'react-router-dom';
 
 const ForgetPassword = () => {
   const [error, setError] = useState('');
@@ -47,6 +48,12 @@ const ForgetPassword = () => {
               <div>
                 <p className='text-red-600'>{error ? error : ''}</p>
               </div>
+              <span>
+                Go to{' '}
+                <Link className=' link link-hover  text-blue-500' to='/login'>
+                  Login
+                </Link>
+              </span>
               <div className='text-center my-2'>
                 <input
                   type='submit'

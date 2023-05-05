@@ -85,7 +85,7 @@ const Login = () => {
                     <span className='label-text'>Email</span>
                   </label>
                   <input
-                    type='text'
+                    type='email'
                     placeholder='email'
                     name='email'
                     className='input input-bordered'
@@ -97,7 +97,7 @@ const Login = () => {
                     <span className='label-text'>Password</span>
                   </label>
                   <input
-                    type='text'
+                    type='password'
                     placeholder='password'
                     name='password'
                     className='input input-bordered'
@@ -109,7 +109,7 @@ const Login = () => {
                     to='/forgetten_password'
                     className=' link link-hover text-blue-500'
                   >
-                    forgetten password
+                    Forgetten password
                   </Link>
                 </span>
                 <div>
