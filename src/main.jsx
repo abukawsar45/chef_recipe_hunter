@@ -1,4 +1,4 @@
-import React from 'react'
+import React  from 'react'
 import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
@@ -8,13 +8,17 @@ import './index.css'
 import Main from './layout/Main';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
-import Register from './components/Register/Register';
-import Blog from './components/Blog/Blog';
+// import Register from './components/Register/Register';
+// import Blog from './components/Blog/Blog';
 import AuthProviders from './AuthProviders/AuthProviders';
-import SingleChefInfo from './components/SingleChefInfo/SingleChefInfo';
+// import SingleChefInfo from './components/SingleChefInfo/SingleChefInfo';
 import PrivateRoutes from './Private/PrivateRoutes';
 import ForgetPassword from './components/ForgetPassword/ForgetPassword';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+
+const Blog = React.lazy(() => import('./components/Blog/Blog'));
+const Register = React.lazy(() => import('./components/Register/Register'));
+const SingleChefInfo = React.lazy(() =>import('./components/SingleChefInfo/SingleChefInfo'));
 
 const router = createBrowserRouter([
   {
