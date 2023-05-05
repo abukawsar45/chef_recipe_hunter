@@ -13,7 +13,7 @@ const FoodDetails = ({ food }) => {
      setActive(true);
   };
 
-  console.log(food);
+  // console.log(food);
   // console.log(food.Ingredients);
   const { food_name, food_image, details,likes, ratings } = food;
   return (
