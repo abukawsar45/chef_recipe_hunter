@@ -126,17 +126,6 @@ const Blog = () => {
             create a custom hook to manage it.
           </p>
           <br />
-          <h4 className='px-2 md:px-6 lg:px-10 text-xl text-amber-400'>
-            Controlled components:
-          </h4>
-          <p className='px-3 md:px-8 lg:px-12 text-slate-900'>
-            Controlled components, on the other hand, are those where the value
-            of the form elements is controlled by React. In other words, React
-            maintains the state of the component and updates the value of the
-            form element every time the state changes. A controlled component
-            allows us to manage the form state with React, giving more control
-            to the developer over the form data.
-          </p>
           <hr />
         </div>
       </div>
